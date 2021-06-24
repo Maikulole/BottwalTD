@@ -65,5 +65,6 @@ margin_right = 512.0
 margin_bottom = 512.0
 texture = ExtResource( 1 )
 
-[connection signal="button_up" from="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Settings_Button" to="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Settings_Button" method="_on_MainMenu_Settings_Button_button_up"]
+[connection signal="button_up" from="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Start_Button" to="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Start_Button" method="OnStartButtonUp" binds= [ "start_scene" ]]
+[connection signal="button_up" from="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Settings_Button" to="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Start_Button" method="OnSettingsButtonUp"]
 [connection signal="button_up" from="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Quit_Button" to="MainMenu_Content_H_Box/MainMenu_Control_Cont/MainMenu_Quit_Button" method="OnQuitButtonUp"]
