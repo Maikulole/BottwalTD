@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/Assets/Images/logo512.png" type="Texture" id=1]
+[ext_resource path="res://src/View/main_menu.gd" type="Script" id=2]
+
+[node name="Main_Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI_Margin_Container" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI_Container" type="HBoxContainer" parent="UI_Margin_Container"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 581.0
+
+[node name="Button_Container" type="VBoxContainer" parent="UI_Margin_Container/UI_Container"]
+margin_right = 63.0
+margin_bottom = 531.0
+
+[node name="Start_Btn" type="Button" parent="UI_Margin_Container/UI_Container/Button_Container"]
+margin_right = 63.0
+margin_bottom = 20.0
+text = "Start"
+
+[node name="Settings_Btn" type="Button" parent="UI_Margin_Container/UI_Container/Button_Container"]
+margin_top = 24.0
+margin_right = 63.0
+margin_bottom = 44.0
+text = "Settings"
+
+[node name="Quit_Btn" type="Button" parent="UI_Margin_Container/UI_Container/Button_Container"]
+margin_top = 48.0
+margin_right = 63.0
+margin_bottom = 68.0
+text = "Quit"
+
+[node name="UI_Container" type="VBoxContainer" parent="UI_Margin_Container/UI_Container"]
+margin_left = 67.0
+margin_right = 579.0
+margin_bottom = 531.0
+
+[node name="Header_Label" type="RichTextLabel" parent="UI_Margin_Container/UI_Container/UI_Container"]
+margin_right = 512.0
+margin_bottom = 15.0
+text = "BottwalTD (Oder so)"
+fit_content_height = true
+
+[node name="Logo_Texture" type="TextureRect" parent="UI_Margin_Container/UI_Container/UI_Container"]
+margin_top = 19.0
+margin_right = 512.0
+margin_bottom = 531.0
+texture = ExtResource( 1 )
+
+[connection signal="button_up" from="UI_Margin_Container/UI_Container/Button_Container/Start_Btn" to="." method="_on_button_up" binds= [ "start" ]]
+[connection signal="button_up" from="UI_Margin_Container/UI_Container/Button_Container/Settings_Btn" to="." method="_on_button_up" binds= [ "settings" ]]
+[connection signal="button_up" from="UI_Margin_Container/UI_Container/Button_Container/Quit_Btn" to="." method="_on_button_up" binds= [ "quit_game" ]]
